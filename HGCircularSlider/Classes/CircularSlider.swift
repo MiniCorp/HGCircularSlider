@@ -253,7 +253,7 @@ open class CircularSlider: UIControl {
         
         let valuesInterval = Interval(min: minimumValue, max: maximumValue, rounds: numberOfRounds)
         // get end angle from end value
-        let endAngle = CircularSliderHelper.scaleToAngle(value: endPointValue, inInterval: valuesInterval) + CircularSliderHelper.circleInitialAngle
+        var endAngle = CircularSliderHelper.scaleToAngle(value: endPointValue, inInterval: valuesInterval) + CircularSliderHelper.circleInitialAngle
         
         if endPointValue == maximumValue {
             endAngle = CircularSliderHelper.circleMaxValue + CircularSliderHelper.circleInitialAngle
