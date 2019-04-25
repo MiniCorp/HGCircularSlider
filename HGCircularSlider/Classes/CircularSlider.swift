@@ -255,6 +255,12 @@ open class CircularSlider: UIControl {
         // get end angle from end value
         let endAngle = CircularSliderHelper.scaleToAngle(value: endPointValue, inInterval: valuesInterval) + CircularSliderHelper.circleInitialAngle
         
+        if endPointValue == maximumValue {
+            endAngle = CircularSliderHelper.circleMaxValue + CircularSliderHelper.circleInitialAngle
+        } else if endPointValue == minimumValue {
+            endAngle = CircularSliderHelper.circleInitialAngle
+        }
+        
         drawFilledArc(fromAngle: CircularSliderHelper.circleInitialAngle, toAngle: endAngle, inContext: context)
         
         // draw end thumb
